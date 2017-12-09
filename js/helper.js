@@ -11,8 +11,8 @@ const helper = {
     div.style["min-height"] = options.height
     div.style["max-height"] = options.height
     div.style.position = "absolute"
-    div.style.top = options.top
-    div.style.left = options.left
+    div.style.top = options.top+"px"
+    div.style.left = options.left+"px"
     canvas.style.border= "1px solid green"
     $(div).append(canvas)
     // div.appendChlid(canvas)
