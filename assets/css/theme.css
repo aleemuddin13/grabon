@@ -1,0 +1,129 @@
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #23d260;
+}
+
+.fullscr {
+  height: 100vh;
+}
+
+.centered {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bo-r {
+  border-right: 1px solid #c7c7c7;
+}
+
+.sb-menu {
+  cursor: pointer;
+}
+
+.sb-menu-item {
+  padding-top: 1em;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.sb-menu-item.active {
+  color: #23d260;
+}
+
+.sb-menu-item:hover {
+  color: #23d260;
+}
+
+.icon-md {
+  font-size: 3em;
+}
+
+.ed-sec {
+  background: rgba(0, 0, 0, 0) url("../img/pattern-bg.jpg") repeat scroll 0 0;
+}
+
+.pt-1 {
+  padding-top: 1em;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.btn-pri {
+  color: #fff;
+  background-color: #23d260
+}
+
+.d-n {
+  display: none;
+}
+
+.clr-nav {
+  list-style: none;
+}
+
+.clr-pvw {
+  border: 1px solid #000;
+  margin: 2px;
+  zoom: 1;
+  vertical-align: top;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+}
+
+ul.clr-nav {
+  padding-left: 0px;
+}
+
+.ud-pw img {
+  border: 1px solid #c7c7c7;
+  border-radius: .25rem;
+  padding: 10px;
+  margin: 5px 5px 0 0;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn {
+  border: 2px solid #23d260;
+  color: #fff;
+  background-color: #23d260;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+td img {
+  height: 100px;
+  border: 1px solid #c7c7c7;
+  border-radius: .25rem;
+  padding: 10px;
+  margin: 5px 5px 0 0;
+}
+
+.login-bg {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/login-bg.jpg");
+  color: #fff;
+}

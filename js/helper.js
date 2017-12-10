@@ -22,5 +22,20 @@ const helper = {
     c.setWidth(options.height);
     c.renderAll()
     return c;
+  },
+  createOnlyCanvas: (options) => {
+    let canvas = document.createElement('canvas');
+    canvas.id = options.id;
+    canvas.style.width = options.width
+    canvas.style.height = options.height
+    canvas.style.border= "1px solid green"
+    // $(div).append(canvas)
+    // div.appendChlid(canvas)
+    // $("#myDiv").append(div)
+    let c = new fabric.Canvas(canvas);
+    c.setHeight(options.width);
+    c.setWidth(options.height);
+    c.renderAll()
+    return c;
   }
 }

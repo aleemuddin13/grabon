@@ -7,14 +7,14 @@ let data = [{
   left: 0,
   data: [{
     type: "IMAGE",
-    url: "images/frame.png",
+    url: "images/bag.png",
     filters: [{
       type: "TINT",
-      color: "#0077CC",
+      color: "#0057CC",
       opacity: 0.5
     }],
     options: {
-      selectable: true
+      selectable: false
     }
   }],
 },{
@@ -33,6 +33,46 @@ let data = [{
     }
   ]
 }]
+const listMap = []
+
+fabric.Canvas.prototype.customiseControls({
+  //
+    tl: {
+        action: 'remove',
+        cursor: "pointer"
+    }
+}, function() {
+    // canvas.renderAll();
+} );
+var randomColor = function randomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        };
+fabric.Object.prototype.customiseCornerIcons({
+            settings: {
+                borderColor: randomColor(),
+                cornerSize: 10,
+                cornerBackgroundColor: 'red',
+                cornerShape: 'circle',
+                cornerPadding: 10,
+            },
+            tl: {
+                icon: 'icons/remove.svg',
+                settings: {
+                    cornerShape: 'rect',
+                    cornerBackgroundColor: "grey",
+                    cornerPadding: 10,
+                    cornerSize: 25,
+                },
+            },
+        }, function() {
+        // canvas.renderAll();
+
+    });
 
 for(d of data){
   let c = helper.createCanvas(d)
@@ -79,11 +119,20 @@ function output(c, d){
 function attachText(c, obj){
   let text = new fabric.Text(obj.text, obj.options);
   c.add(text)
+  addListItem(c, text)
+  // text.center()
+  // c.centerObject(text)
+  // c.setActiveObject(text)
+  // c.renderAll()
 }
+
+
 
 function attachImage(c, obj){
   let image = new Image()
   image.onload = function(){
+
+    console.log(c.height, c.width);
     let img = new fabric.Image(image, obj.options);
     if(obj.filters){
       for(filter of obj.filters){
@@ -98,11 +147,51 @@ function attachImage(c, obj){
     }
     img.applyFilters(c.renderAll.bind(c));
     c.add(img);
-    c.centerObject(img);
-    // c.renderAll()
+    // c.centerObject(img);
+    if(obj.scaleImage !== false){
+      let imagePadding = 40
+      img.scaleToWidth(c.width - imagePadding)
+      img.scaleToHeight(c.height - imagePadding)
+      img.top = imagePadding/2
+      img.left = imagePadding/2
+    }
+    c.renderAll()
+    addListItem(c, img)
     // c.calcOffset()
   }
   image.src = obj.url
+}
+
+
+
+function addListItem(c, elem){
+  console.log("list");
+  listMap.push({c,elem})
+  let i = listMap.length
+  $("#myUl").append("<li><button onclick='selectItem("+i+")'>"+i+"</button></li>")
+}
+
+function selectItem(i){
+  let obj = listMap[i-1]
+  if(obj.c.getActiveObject() == obj.elem){
+    obj.c.discardActiveObject().renderAll()
+    console.log("here");
+  }else{
+    obj.c.setActiveObject(obj.elem)
+
+  }
+
+}
+
+function removeItem(obj){
+  for(i=0; i<listMap.length; i++){
+    if(listMap[i].elem == obj){
+      console.log("yaba");
+      break
+    }
+  }
+  listMap.splice(i,1)
+  $("#myUl li:last").remove()
 }
 //
 // let canvas = helper.createCanvas(data[0])

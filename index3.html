@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Editor - ScriptOn</title>
+  <title>Grabon Hackathon</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -16,7 +16,7 @@
     <div class="row fullscr">
       <div class="col-1 bo-r text-center">
         <div class="sb-menu">
-          <div class="sb-menu-item" id="designBtn" onclick="designMenuOpen()">
+          <div class="sb-menu-item">
             <span class="icon-Folder-Open icon-md"></span>
             <p>Designs</p>
           </div>
@@ -43,13 +43,11 @@
         </div>
       </div>
       <!-- Designs -->
-      <div class="col-3 bo-r d-n" id="designMenu">
+      <div class="col-3 bo-r" id="designMenu">
         <p class="display-4"><b>Designs</b></p>
         <hr>
         <p class="lead">Select a Design</p>
-        <div class="ud-pw" id="designImages">
-
-        </div>
+        <div id="table_container"></div>
       </div>
       <!-- Text Editor -->
       <div class="col-3 bo-r d-n" id="textMenu">
@@ -67,15 +65,15 @@
         <div id="text">
           <h4 id="textPreview"></h4>
         </div>
-        <button onclick="addText()" class="btn pt-1 btn-pri" name="button">Add <span class="icon-Next2"></span></button>
+        <button type="submit" class="btn pt-1 btn-pri" name="button">Add <span class="icon-Next2"></span></button>
       </div>
       <!-- Color Selector -->
       <div class="col-3 bo-r d-n" id="colorMenu">
         <p class="display-4"><b>Pick Color</b></p>
         <hr>
         <p class="lead">Color Options Available</p>
-        <ul class="clr-nav pt-1" id="colorUl">
-          <!-- <li class="clr-pvw"></li>
+        <ul class="clr-nav pt-1">
+          <li class="clr-pvw"></li>
           <li class="clr-pvw" style="background-color:#fc8d74"></li>
           <li class="clr-pvw" style="background-color:#164a7c"></li>
           <li class="clr-pvw" style="background-color:#ff0033"></li>
@@ -85,7 +83,7 @@
           <li class="clr-pvw" style="background-color:#000000"></li>
           <li class="clr-pvw" style="background-color:#ffb739"></li>
           <li class="clr-pvw" style="background-color:#c34628"></li>
-          <li class="clr-pvw" style="background-color:#4a2958"></li> -->
+          <li class="clr-pvw" style="background-color:#4a2958"></li>
         </ul>
         <center></center>
       </div>
@@ -101,20 +99,7 @@
         <div class="ud-pw mt-1" id="uploadPreview"></div>
       </div>
       <div class="col ed-sec">
-        <div class="row" style="margin-top:5%">
-          <div class="col-12 row">
-            <div class="col-5">
-            </div>
-            <div  style="border: 1px solid black;min-width:500px;min-height:500px">
-              <div style="position:fixed" id="myDiv"></div>
-            </div>
-            <div style="top:5%">
-              <ul id="myUl">
 
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -124,12 +109,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="assets/js/uiController.js"></script>
   <script src="assets/js/selectFont.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
-  <script src="https://pixolith.github.io/fabricjs-customise-controls-extension/dependencies/fabric/dist/fabric.js" ></script>
-  <script src="js/customizeControl.min.js" ></script>
-  <script src="js/helper.js" ></script>
-  <script src="js/core.js" ></script>
 </body>
 
 </html>
